@@ -47,7 +47,7 @@ export function HeroBackgroundVideo() {
 
   return (
     <div
-      className="pointer-events-none absolute inset-0 z-0 min-h-dvh overflow-hidden bg-zinc-900"
+      className="pointer-events-none absolute inset-0 z-0 min-h-dvh overflow-hidden bg-white"
       aria-hidden
     >
       <video
