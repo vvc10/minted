@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-/** Slower, smooth motion; adjust 0.35–0.55 to taste */
-const PLAYBACK_RATE = 0.45;
+/**  some browsers clamp to ~0.25 minimum */
+const PLAYBACK_RATE = 0.5;
 
 export function HeroBackgroundVideo() {
   const ref = useRef<HTMLVideoElement>(null);
