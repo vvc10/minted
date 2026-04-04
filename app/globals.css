@@ -58,7 +58,7 @@ body {
     transform: translate(-5%, -10%);
   }
 }
-
+/* 
 .film-grain {
   pointer-events: none;
   position: fixed;
@@ -84,4 +84,4 @@ body {
   .film-grain::before {
     animation: none;
   }
-}
+} */
