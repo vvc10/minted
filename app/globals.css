@@ -76,7 +76,7 @@ body {
   top: -100%;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png");
   background-repeat: repeat;
-  opacity: 0.1;
+  opacity: 0.0;
   animation: film-grain-shift 9s steps(8) infinite;
 }
 
