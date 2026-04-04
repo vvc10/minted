@@ -1,8 +1,15 @@
 import { Instrument_Serif } from "next/font/google";
 import Image from "next/image";
 import { EmailSignup } from "./launch/EmailSignup";
+import { HeroBackgroundImage } from "./launch/HeroBackgroundImage";
 import { HeroBackgroundVideo } from "./launch/HeroBackgroundVideo";
 import { IconLinkedIn, IconX } from "./launch/icons";
+
+export type LaunchBackground = "video" | "image";
+
+type LaunchContentProps = {
+  background?: LaunchBackground;
+};
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -13,10 +20,14 @@ const instrumentSerif = Instrument_Serif({
 
 const MINT = "#00995F";
 
-export function LaunchContent() {
+export function LaunchContent({ background = "video" }: LaunchContentProps) {
   return (
     <div className="relative flex min-h-dvh flex-col overflow-x-hidden bg-white text-zinc-900">
-      <HeroBackgroundVideo />
+      {background === "image" ? (
+        <HeroBackgroundImage />
+      ) : (
+        <HeroBackgroundVideo />
+      )}
 
       <div
         className="pointer-events-none absolute -top-7 left-1/2 z-1 h-[60vh] md:h-[60vh] w-[min(135vw,100svw)] max-w-400 -translate-x-1/2 rounded-[50%] bg-white blur-3xl sm:-top-12.5 sm:h-[60vh] lg:blur-[100px] sm:w-[120vw] md:blur-[100px] sm:blur-[100px]"
