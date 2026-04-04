@@ -80,11 +80,11 @@ export function LaunchContent() {
             </p>
 
             <div className={`${instrumentSerif.className} w-full px-1 sm:px-0`}>
-              <h1 className="text-balance text-[1.7rem] font-normal leading-[1.1] tracking-tight text-black min-[380px]:text-[1.85rem] sm:text-[2.35rem] sm:leading-[1.08] md:text-[3.25rem] lg:text-[3.5rem]">
+              <h1 className="text-balance text-[2.7rem] font-normal leading-[1.1] tracking-tight text-black min-[380px]:text-[1.85rem] sm:text-[2.35rem] sm:leading-[1.08] md:text-[3.25rem] lg:text-[3.5rem]">
                 The Ownership Reserve
               </h1>
               <p
-                className="mt-2 text-balance text-xl font-normal italic sm:mt-4 sm:text-2xl md:text-4xl lg:text-[2.65rem]"
+                className="mt-2 text-balance text-2xl font-normal italic sm:mt-4 sm:text-2xl md:text-4xl lg:text-[2.65rem]"
                 style={{ color: MINT }}
               >
                 Currency For Web3
