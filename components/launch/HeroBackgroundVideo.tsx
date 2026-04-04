@@ -52,13 +52,7 @@ export function HeroBackgroundVideo() {
     >
       <video
         ref={ref}
-        className="absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
-        style={{
-          minWidth: "100%",
-          minHeight: "100%",
-          width: "auto",
-          height: "auto",
-        }}
+        className="absolute inset-0 h-full w-full bg-white object-cover object-center"
         autoPlay
         muted
         loop
