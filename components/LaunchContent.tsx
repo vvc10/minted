@@ -1,9 +1,12 @@
+"use client";
+
 import { Instrument_Serif } from "next/font/google";
 import Image from "next/image";
 import { EmailSignup } from "./launch/EmailSignup";
 import { HeroBackgroundImage } from "./launch/HeroBackgroundImage";
 import { HeroBackgroundVideo } from "./launch/HeroBackgroundVideo";
 import { IconLinkedIn, IconX } from "./launch/icons";
+import { LaunchFilmOverlay } from "./launch/LaunchFilmOverlay";
 
 export type LaunchBackground = "video" | "image";
 
@@ -23,6 +26,8 @@ const MINT = "#00995F";
 export function LaunchContent({ background = "video" }: LaunchContentProps) {
   return (
     <div className="relative flex min-h-dvh flex-col overflow-x-hidden bg-white text-zinc-900">
+      <LaunchFilmOverlay />
+
       {background === "image" ? (
         <HeroBackgroundImage />
       ) : (
@@ -35,7 +40,7 @@ export function LaunchContent({ background = "video" }: LaunchContentProps) {
       />
 
       <div className="relative z-10 flex min-h-dvh flex-col">
-        <header className="flex w-full items-center justify-between gap-3 px-4 pt-4 pb-3 sm:px-6 sm:pt-6 sm:pb-4 md:px-10 lg:px-14">
+        <header className="relative z-[10000] flex w-full items-center justify-between gap-x-3 gap-y-2 px-4 pt-4 pb-3 sm:px-6 sm:pt-6 sm:pb-4 md:px-10 lg:px-14">
           <a
             href="/"
             className="relative flex min-w-0 shrink-0 items-center"
@@ -50,6 +55,7 @@ export function LaunchContent({ background = "video" }: LaunchContentProps) {
               priority
             />
           </a>
+
           <nav
             className="flex shrink-0 items-center gap-1.5 sm:gap-2 md:gap-3"
             aria-label="Social and access"
@@ -82,7 +88,7 @@ export function LaunchContent({ background = "video" }: LaunchContentProps) {
         </header>
 
         <main className="flex flex-1 flex-col items-center px-4 pb-6 pt-2 sm:px-6 sm:pb-8 sm:pt-4 md:px-10">
-          <div className="relative -top-3 flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-3 text-center sm:-top-8 sm:gap-4 md:-top-15 md:gap-4">
+          <div className="relative -top-3 flex w-full max-w-3xl flex-1 flex-col items-center justify-start gap-3 py-[100px] text-center sm:-top-8 sm:justify-center sm:gap-4 sm:py-0 md:-top-15 md:gap-4">
             <p className="flex max-w-[min(100%,20rem)] flex-row flex-wrap items-center justify-center gap-1 md:gap-1.2 rounded-full border border-[#00995F20] bg-[#00995F20] px-2 py-1.5 pl-2.5 text-[10px] font-normal sm:max-w-none sm:gap-2 sm:px-2 sm:pl-3 sm:text-[11px] md:gap-3">
               <span className="whitespace-nowrap">Register for</span>
               <span className="rounded-full bg-[#00995F] px-2 py-0.5  font-normal text-white sm:px-2 sm:py-1 md:px-2 md:py-1 text-[7px] md:text-[9px]">

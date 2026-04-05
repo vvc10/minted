@@ -29,7 +29,6 @@ export default function RootLayout({
     >
       <body className="flex min-h-dvh flex-col bg-white font-sans antialiased">
         {children}
-        <div className="film-grain" aria-hidden />
       </body>
     </html>
   );

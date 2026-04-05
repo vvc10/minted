@@ -2,9 +2,6 @@
 
 import { useEffect, useRef } from "react";
 
-/**  some browsers clamp to ~0.25 minimum */
-const PLAYBACK_RATE = 0.5;
-
 export function HeroBackgroundVideo() {
   const ref = useRef<HTMLVideoElement>(null);
 
@@ -12,35 +9,19 @@ export function HeroBackgroundVideo() {
     const video = ref.current;
     if (!video) return;
 
-    const applySlow = () => {
-      try {
-        video.playbackRate = PLAYBACK_RATE;
-      } catch {
-        /* some browsers may restrict before play */
-      }
-    };
-
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const syncPlay = () => {
       if (motion.matches) {
         video.pause();
       } else {
         void video.play().catch(() => {});
-        applySlow();
       }
     };
 
-    applySlow();
-    video.addEventListener("loadedmetadata", applySlow);
-    video.addEventListener("loadeddata", applySlow);
-    video.addEventListener("playing", applySlow);
     motion.addEventListener("change", syncPlay);
     syncPlay();
 
     return () => {
-      video.removeEventListener("loadedmetadata", applySlow);
-      video.removeEventListener("loadeddata", applySlow);
-      video.removeEventListener("playing", applySlow);
       motion.removeEventListener("change", syncPlay);
     };
   }, []);
@@ -52,7 +33,7 @@ export function HeroBackgroundVideo() {
     >
       <video
         ref={ref}
-        className="absolute inset-0 h-full w-full bg-white object-cover object-center"
+        className="pointer-events-none absolute inset-0 h-full w-full bg-white object-cover object-center"
         autoPlay
         muted
         loop

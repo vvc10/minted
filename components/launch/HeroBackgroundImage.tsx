@@ -11,7 +11,7 @@ export function HeroBackgroundImage() {
         alt=""
         fill
         priority
-        className="object-cover object-center"
+        className="pointer-events-none object-cover object-center"
         sizes="100vw"
       />
     </div>
